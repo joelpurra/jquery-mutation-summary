@@ -1,5 +1,5 @@
-CollectCalls javascript library. Collects functions that should be called in the future.
-Copyright (c) 2010, 2011, 2012 Joel Purra <http://joelpurra.se/>
+jquery-mutation-summary javascript library. A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper.
+Copyright (c) 2012 Joel Purra <http://joelpurra.se/>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
