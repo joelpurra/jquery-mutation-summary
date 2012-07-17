@@ -1,115 +1,88 @@
----
-layout: example
-title: demo
----
+--- layout: example title: demo ---
 <p>
-	This page demonstrates, in a blunt way, how scripts can block load/execution/display
-	of other content/scripts/stylesheets/images on the page. There are two <code>alert()</code>
-	boxes shown - one blocking and one non-blocking. Both of them are initialized in
-	the middle of the page's contents, between the "first half" and the "second half".
-	Using CollectCalls, the <code>alert()</code> can be deferred until the rest of the
-	page and jQuery has been loaded.
+    A simple demo showing the results of any change in the console.
 </p>
 <p>
-	In case you wonder why jQuery and CollectCalls are not loaded at the top of the
-	page, it is because it is <a href="http://code.google.com/speed/page-speed/docs/payload.html#DeferLoadingJS">
-		best practice to load scripts at the bottom of the page</a>, near <code>&lt;/body&gt;</code>.
-	There are also other techniques/optimizations/combinations that make it hard to
-	predict exactly when a script has loaded and executed, but CollectCalls can help
-	manage all of them.
+    <button type="button" id="click-to-add">
+        Click to add a link to the homepage to the list below.
+    </button>
 </p>
 <h2>
-	Demo modes
-</h2>
-<ol>
-	<li><a href="demo.html">Reload and do not show any alert box.</a></li>
-	<li><a href="demo.html?show-alert=blocking">Reload and show blocking alert box without
-		CollectCalls.</a></li>
-	<li><a href="demo.html?show-alert=non-blocking">Reload and show non-blocking alert box
-		using CollectCalls.</a></li>
-	<li><a href="demo.html?show-alert=blocking&show-alert=non-blocking">Reload and show
-		both blocking and non-blocking alert box.</a></li>
-</ol>
-<h2>
-	First half of the page has loaded
+    Latest mutation
 </h2>
 <p>
-	Some content <em>above</em> both inline script blocks. If you have chosen to see
-	the blocking <code>alert()</code>, you can see how this demonstrates that some scripts
-	are better to execute <em>after</em> the page/all scripts (or just the right scripts)
-	have loaded.
-</p>
-<!-- Code that is written to the HTML now, but needs to be executed later -->
-<!-- This can be anywhere on the page, even after CollectCalls(...), and multiple times -->
-<script>
-//<![CDATA[
-
-	// DEMO CODE: Only run non-blocking CollectCalls queue "runWithJQuery" when asked to
-	if (document.location.toString().indexOf("show-alert=non-blocking") !== -1)
-	{
-		// Set up, or reuse, a queue built as an array object
-		var runWithJQuery = runWithJQuery || [];
-
-		runWithJQuery.push(function ()
-		{
-			// Do some heavy lifting with jQuery
-			var scriptCount = $("script").length;
-
-			// Then show alert box - it won't block the page load, since it's already done
-			var msg = "jQuery has loaded, the page is ready and the queue is invoked." + "\n\n"
-			+ "Found " + scriptCount + " script tags on the page, using jQuery " + $.fn.jquery + ".";
-			alert(msg);
-		});
-	}
-
-//]]>
-</script>
-<!-- This is the counter example  -->
-<script>
-//<![CDATA[
-
-	// DEMO CODE: Only run blocking inline code when asked to
-	// This is bad code, do not copy
-	if (document.location.toString().indexOf("show-alert=blocking") !== -1)
-	{
-		alert("This alert is an example of script tags blocking execution.\n\nHalf of the page is not visible yet, and jQuery cannot be accessed.");
-	}
-
-//]]>
-</script>
-<h2>
-	Second half of the page has loaded
-</h2>
-<p>
-	Some content <em>below</em> both inline script blocks. If you have chosen to use
-	CollectCalls to show the non-blocking <code>alert()</code>, you can see that the
-	entire page has loaded before it is popping up - even though the inline script using
-	jQuery was defined <em>above</em> this paragraph.
+    <output id="output">
+    </output>
 </p>
 <h2>
-	End of page
+    List
 </h2>
-<p>
-	The javascript libraries <a href="http://code.jquery.com/jquery-latest.js">jquery-latest.js</a>
-	and <a href="../src/collectcalls.joelpurra.js">collectcalls.joelpurra.js</a> are
-	loaded <em>below</em> this paragraph.
-</p>
+<ul id="list-with-links">
+    <li>
+        Clicking the button will add to this list.
+    </li>
+</ul>
 <!-- Load jQuery (and plugins) at the end of the page for efficiency -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<!-- Load collectcalls.joelpurra.js at any point before calling JoelPurra.CollectCalls(...) -->
-<script src="../src/collectcalls.joelpurra.js"></script>
+<script src="mutation_summary.js">
+</script>
+<script src="http://code.jquery.com/jquery-latest.js">
+</script>
+<script src="../src/jquery.mutation-summary.js">
+</script>
 <script>
 //<![CDATA[
 
-	// This code won't be executed until jQuery has been loaded.
-	$(function ()
-	{
-		// Wrap the queue with CollectCalls
-		runWithJQuery = new JoelPurra.CollectCalls(runWithJQuery);
+// This code won't be executed until jQuery has been loaded.
+$(function() {
+    // Use windows to listen to all events on the page
+    var $listWithLinks = $("#list-with-links"),
+        $clickToAddButton = $("#click-to-add"),
+        $output = $("#output"),
+        links = ["http://joelpurra.github.com/jquery-mutation-summary", "http://joelpurra.github.com/", "http://www.google.com/", "http://stackoverflow.com/", "http://slashdot.org/", "http://joelpurra.se/"];
 
-		// Invoke the entire queue in the order the functions were added
-		runWithJQuery.join();
-	});
+    // The callback in this case will only print the result
+    // Connect mutation-summary
+    $listWithLinks.mutationSummary("connect", callback, [{
+        all: true
+    }]);
+
+    // TOOD: Disconnect when done listening
+    //$listWithLinks.mutationSummary("disconnect");
+
+    // Do something to trigger mutationSummary
+    $clickToAddButton.click(addLinkToList);
+
+    function getRandomLink() {
+        var index = Math.floor(Math.random() * links.length),
+            url = links[index];
+
+        return $("<a />", {
+            href: url
+        }).text(url);
+    }
+
+    function addLinkToList(evt) {
+        var rnd = Math.floor(Math.random() * 1000) + 1000,
+            $listItem = $("<li />").text("#" + rnd + ": "),
+            $link = getRandomLink();
+
+        $link.appendTo($listItem);
+        $listItem.appendTo($listWithLinks);
+
+        evt.preventDefault();
+        return false;
+    }
+
+    function callback(summaries) {
+        var firstSummary = summaries[0],
+            $firstElement = $(firstSummary.added[0]),
+            now = new Date($.now()),
+            nowFormatted = now.getHours() + ":" + now.getMinutes() + "." + now.getSeconds() + "." + now.getMilliseconds(),
+            message = nowFormatted + " Added tag of type " + ($firstElement.length > 0 ? $firstElement.get(0).tagName : "(unknown)") + " with " + $firstElement.children().length + " children and text \"" + $firstElement.text() + "\"";
+
+        $output.text(message);
+    }
+});
 
 //]]>
 </script>
