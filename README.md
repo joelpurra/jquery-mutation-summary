@@ -3,6 +3,8 @@ A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper
 
 > [Mutation Summary](http://code.google.com/p/mutation-summary/) is a JavaScript library that makes observing changes to the DOM fast, easy and safe.
 
+Mutation Observers, and Mutation Summary even more so, are useful for watching changes made to the DOM what you cannot control. These external changes may come from other jQuery plugins, non-jQuery scripts, legacy code or even flash objects that modifies the page around it. If you're using the deprecated [DOM Mutation Events](http://code.google.com/p/mutation-summary/wiki/DOMMutationObservers) or are Have a look at [this fun and informative 8 minute screen cast](http://code.google.com/p/mutation-summary/) by [Rafael Z Weinstein](http://code.google.com/u/rafaelw@chromium.org/), the creator of mutation-summary.
+
 ## Get it
 
 To include dependencies, make sure to get the submodules too.
@@ -12,7 +14,7 @@ git clone --recursive git://github.com/joelpurra/jquery-mutation-summary.git
 ```
 
 ## Demos
-* [`example/shuffle.html`](http://joelpurra.github.com/jquery-mutation-summary/example/shuffle.html): A copy of the original [shuffle.html example](http://mutation-summary.googlecode.com/git/examples/shuffle_compare/shuffle.html), but with this library as the default option.
+* [`example/shuffle.html`](http://joelpurra.github.com/jquery-mutation-summary/example/shuffle.html): A copy of the original [shuffle.html example](http://mutation-summary.googlecode.com/git/examples/shuffle_compare/shuffle.html), but with this library as the default option. Shuffle.html is explained in [the mutation-summary screen cast](http://code.google.com/p/mutation-summary/).
 * [`example/demo.html`](http://joelpurra.github.com/jquery-mutation-summary/example/demo.html): Listening to simple mutations in a list.
 
 ## Usage
