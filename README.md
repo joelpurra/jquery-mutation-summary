@@ -60,7 +60,8 @@ $observerSummaryRoot.mutationSummary("disconnect");
 ## Original purpose
 Developed to get a jQuery chainable version of the mutation-summary library.
 
-[DOM Mutation Observers](http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#mutation-observers) are useful for watching changes made to the DOM elements (including their attributes and contents) that out of your control. These external changes may come from other jQuery plugins, non-jQuery scripts, legacy code or even flash objects that modifies the page around it. (Note: [DOM Mutation Events](http://code.google.com/p/mutation-summary/wiki/DOMMutationObservers) have been deprecated.)
+[DOM Mutation Observers](http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#mutation-observers) are useful for watching changes made to the DOM elements (including their attributes and contents) that are out of your control. These external changes may come from other jQuery plugins, non-jQuery scripts, legacy code or even flash objects that modifies the page around it. 
+If you have previously used [DOM Mutation Events](http://code.google.com/p/mutation-summary/wiki/DOMMutationObservers), please note that they have been deprecated.
 
 ## Dependencies
 jquery-mutation-summary's runtime dependencies are
