@@ -1,9 +1,9 @@
 # [jquery-mutation-summary](http://joelpurra.github.com/jquery-mutation-summary) javascript library
-A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper.
+A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper. It adds easy, chainable `.mutationSummary()` calls to your jQuery objects.
 
 > [Mutation Summary](http://code.google.com/p/mutation-summary/) is a JavaScript library that makes observing changes to the DOM fast, easy and safe.
 
-Mutation Observers, and Mutation Summary even more so, are useful for watching changes made to the DOM what you cannot control. These external changes may come from other jQuery plugins, non-jQuery scripts, legacy code or even flash objects that modifies the page around it. If you're using the deprecated [DOM Mutation Events](http://code.google.com/p/mutation-summary/wiki/DOMMutationObservers) or are Have a look at [this fun and informative 8 minute screen cast](http://code.google.com/p/mutation-summary/) by [Rafael Z Weinstein](http://code.google.com/u/rafaelw@chromium.org/), the creator of mutation-summary.
+The Mutation Summary library aggregates multiple DOM mutations to a neat changeset, optionally [filtered by CSS-style selectors](http://code.google.com/p/mutation-summary/wiki/APIReference#The_element_Query). Have a look at [this fun and informative 8 minute screen cast](http://code.google.com/p/mutation-summary/) by [Rafael Z Weinstein](http://code.google.com/u/rafaelw@chromium.org/), the creator of mutation-summary.
 
 ## Get it
 
@@ -19,11 +19,28 @@ git clone --recursive git://github.com/joelpurra/jquery-mutation-summary.git
 
 ## Usage
 
-### Javascript
+See [mutation-summary API reference](http://code.google.com/p/mutation-summary/wiki/APIReference) for details on [`callback(summary[])`](http://code.google.com/p/mutation-summary/wiki/APIReference#Callback_parameters), [`queries`](http://code.google.com/p/mutation-summary/wiki/APIReference#Query_Types) and other options.
+
+### Public methods
 
 ```javascript
-// Use window to listen to all events on the page
-var $observerSummaryRoot = $(window);
+// Connect mutation observation
+$(selector).mutationSummary("connect", options);
+$(selector).mutationSummary("connect", callback(summary[]) [, observeOwnChanges], queries);
+
+// Diconnect all mutation observation
+$(selector).mutationSummary("disconnect");
+
+// To disconnect a previous "connect" call only, pass the same parameters
+$(selector).mutationSummary("disconnect", options);
+$(selector).mutationSummary("disconnect", callback(summary[]) [, observeOwnChanges], queries);
+```
+
+### Example
+
+```javascript
+// Use document to listen to all events on the page (you might want to be more specific)
+var $observerSummaryRoot = $(document);
 
 // Simplest callback, just logging to the console
 function callback(summaries){
@@ -43,6 +60,8 @@ $observerSummaryRoot.mutationSummary("disconnect");
 ## Original purpose
 Developed to get a jQuery chainable version of the mutation-summary library.
 
+[DOM Mutation Observers](http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#mutation-observers) are useful for watching changes made to the DOM elements (including their attributes and contents) that out of your control. These external changes may come from other jQuery plugins, non-jQuery scripts, legacy code or even flash objects that modifies the page around it. (Note: [DOM Mutation Events](http://code.google.com/p/mutation-summary/wiki/DOMMutationObservers) have been deprecated.)
+
 ## Dependencies
 jquery-mutation-summary's runtime dependencies are
 
@@ -50,14 +69,13 @@ jquery-mutation-summary's runtime dependencies are
 * [jQuery](http://jquery.com/)
 
 ## Browser compatibility
-Should be about as compatible as mutation-summary is - see the wiki page on [browser support for Mutation Observers](http://code.google.com/p/mutation-summary/wiki/DOMMutationObservers#Browser_Availability).
+Should be as compatible as mutation-summary is - see the wiki page on [browser support for Mutation Observers](http://code.google.com/p/mutation-summary/wiki/DOMMutationObservers#Browser_Availability). jQuery is assumed to be available in these environments.
 
 ## TODO
-
 *Patches/pull requests welcome!*
 
 * Write tests.
-* Write example callback filters.
+* Write example callback filters that act only on, for example, removed attributes or added elements.
 * Add support for [namespaced/filtered events](http://docs.jquery.com/Namespaced_Events), for example `mutationSummary.element.added` or `mutationSummary.attribute.valueChanged`.
 
 ## License
