@@ -1,3 +1,6 @@
+---
+title: shuffle
+---
 <!DOCTYPE html>
 <html>
 <!--
@@ -31,6 +34,10 @@ jquery-mutation-summary
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="../src/jquery.mutation-summary.js"></script>
 <body>
+  <h1>
+    <a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
+  </h1>
+
   Shuffle moves: <input id="moveCount" type="number" value="1000">
 
   <select id="watchType" onchange="setupWatch();">
