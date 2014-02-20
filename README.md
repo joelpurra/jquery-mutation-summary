@@ -80,7 +80,7 @@ Should be as compatible as mutation-summary is - see the wiki page on [browser s
 * Add support for [namespaced/filtered events](http://docs.jquery.com/Namespaced_Events), for example `mutationSummary.element.added` or `mutationSummary.attribute.valueChanged`.
 
 ## License
-Copyright (c) 2012, Joel Purra <http://joelpurra.se/>
+Copyright (c) 2012, 2013, 2014, Joel Purra <http://joelpurra.se/>
 All rights reserved.
 
 When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL.
