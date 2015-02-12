@@ -85,7 +85,3 @@ All rights reserved.
 
 When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL.
 Please see the LICENSE file for details.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/joelpurra/jquery-mutation-summary/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
