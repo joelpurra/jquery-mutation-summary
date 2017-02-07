@@ -106,4 +106,4 @@ Should be as compatible as mutation-summary is - see the wiki page on [browser s
 
 
 
-[jquery-mutation-summary](https://joelpurra.github.io/jquery-mutation-summary) copyright (c) 2012, 2013, 2014, 2015, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL.
+[jquery-mutation-summary](https://joelpurra.github.io/jquery-mutation-summary) copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL.

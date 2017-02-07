@@ -1,6 +1,6 @@
 /*!
  * @license jquery-mutation-summary
- * Copyright © 2012, 2013, 2014, Joel Purra <https://joelpurra.com/>
+ * Copyright © 2012, 2013, 2014, 2015, 2016, 2017, Joel Purra <https://joelpurra.com/>
  * Released under MIT, BSD and GPL license. Comply with at least one.
  *
  * A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper.
