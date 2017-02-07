@@ -33,10 +33,10 @@
         "type": "MIT",
         "url": "https://github.com/joelpurra/jquery-mutation-summary/blob/master/LICENSE-MIT"
     }],
-    "homepage": "https://joelpurra.github.io/jquery-mutation-summary",
-    "docs": "https://joelpurra.github.io/jquery-mutation-summary",
+    "homepage": "https://joelpurra.com/projects/jquery-mutation-summary",
+    "docs": "https://joelpurra.com/projects/jquery-mutation-summary",
     "bugs": "https://github.com/joelpurra/jquery-mutation-summary/issues",
-    "demo": "https://joelpurra.github.io/jquery-mutation-summary/example/demo.html",
+    "demo": "https://joelpurra.com/projects/jquery-mutation-summary/docs/example/demo.html",
     "dependencies": {
         "jquery": ">=1.7.0"
     }

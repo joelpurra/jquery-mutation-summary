@@ -1,4 +1,4 @@
-# [jquery-mutation-summary](https://joelpurra.github.io/jquery-mutation-summary) javascript library
+# [jquery-mutation-summary](https://joelpurra.com/projects/jquery-mutation-summary) javascript library
 
 <p class="donate">
   <a href="https://joelpurra.com/donate/proceed/?amount=5&currency=usd"><kbd>Donate $5 now</kbd></a>
@@ -26,8 +26,8 @@ The Mutation Summary library aggregates multiple DOM mutations to a neat changes
 
 ## Demos
 
-* [`example/shuffle.html`](https://joelpurra.github.io/jquery-mutation-summary/example/shuffle.html): A copy of the original [shuffle.html example](https://github.com/rafaelw/mutation-summary/blob/master/examples/shuffle_compare/shuffle.html), but with this library as the default option. Shuffle.html is explained in [the mutation-summary screen cast](https://github.com/rafaelw/mutation-summary).
-* [`example/demo.html`](https://joelpurra.github.io/jquery-mutation-summary/example/demo.html): Listening to simple mutations in a list.
+* [`example/shuffle.html`](https://joelpurra.com/projects/jquery-mutation-summary/docs/example/shuffle.html): A copy of the original [shuffle.html example](https://github.com/rafaelw/mutation-summary/blob/master/examples/shuffle_compare/shuffle.html), but with this library as the default option. Shuffle.html is explained in [the mutation-summary screen cast](https://github.com/rafaelw/mutation-summary).
+* [`example/demo.html`](https://joelpurra.com/projects/jquery-mutation-summary/docs/example/demo.html): Listening to simple mutations in a list.
 
 
 
@@ -67,7 +67,7 @@ function callback(summaries){
 $observerSummaryRoot.mutationSummary("connect", callback, [{ all: true }]);
 
 // Do something to trigger mutationSummary
-$("<a />", { href: "https://joelpurra.github.io/jquery-mutation-summary"}).text("Go to the jquery-mutation-summary website").appendTo("body");
+$("<a />", { href: "https://joelpurra.com/projects/jquery-mutation-summary"}).text("Go to the jquery-mutation-summary website").appendTo("body");
 
 // Disconnect when done listening
 $observerSummaryRoot.mutationSummary("disconnect");
@@ -113,4 +113,4 @@ Should be as compatible as mutation-summary is - see the wiki page on [browser s
 
 
 
-[jquery-mutation-summary](https://joelpurra.github.io/jquery-mutation-summary) copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL. [Your donations are appreciated!](https://joelpurra.com/donate/)
+[jquery-mutation-summary](https://joelpurra.com/projects/jquery-mutation-summary) copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL. [Your donations are appreciated!](https://joelpurra.com/donate/)

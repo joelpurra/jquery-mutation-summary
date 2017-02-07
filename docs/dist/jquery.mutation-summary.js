@@ -4,7 +4,7 @@
  * Released under MIT, BSD and GPL license. Comply with at least one.
  *
  * A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper.
- * https://joelpurra.github.io/jquery-mutation-summary
+ * https://joelpurra.com/projects/jquery-mutation-summary
  *
  * "Mutation Summary is a JavaScript library that makes observing changes to the DOM fast, easy and safe."
  * https://github.com/rafaelw/mutation-summary
