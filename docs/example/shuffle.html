@@ -1,5 +1,6 @@
 ---
-title: shuffle
+layout: example
+title: Shuffle Comparison
 ---
 <!DOCTYPE html>
 <html>
@@ -28,31 +29,24 @@ jquery-mutation-summary
  * http://joelpurra.github.com/jquery-mutation-summary
 
 -->
-<head>
-<title>Shuffle Comparison</title>
-<script src="../lib/mutation-summary/src/mutation-summary.js"></script>
-<script src="https://code.jquery.com/jquery-latest.js"></script>
-<script src="../src/jquery.mutation-summary.js"></script>
-<body>
-  <h1>
-    <a href="{{ site.projectUrl }}">{{ site.projectName }}</a>: {{ page.title | xml_escape }}
-  </h1>
+Shuffle moves: <input id="moveCount" type="number" value="1000">
 
-  Shuffle moves: <input id="moveCount" type="number" value="1000">
-
-  <select id="watchType" onchange="setupWatch();">
+<select id="watchType" onchange="setupWatch();">
     <option value="event">DOM Mutation Events</option>
     <option value="observer">DOM Mutation Observers</option>
     <option value="summary">The Mutation Summary Library</option>
     <option value="jquery-summary" selected="selected">The jQuery wrapped Mutation Summary Library</option>
-  </select>
-  <button onclick="shuffle();">Shuffle!</button>
+</select>
 
-  <ul id="deck"><li>Ace</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>Jack</li><li>Queen</li><li>King</li></ul>
+<button onclick="shuffle();">Shuffle!</button>
 
-  <h3 id="report"></h3>
-</body>
+<ul id="deck"><li>Ace</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>Jack</li><li>Queen</li><li>King</li></ul>
 
+<h3 id="report"></h3>
+
+<script src="../lib/mutation-summary/src/mutation-summary.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="../src/jquery.mutation-summary.js"></script>
 <script>
 
 var changeCount;
@@ -159,4 +153,3 @@ function setupWatch() {
 window.addEventListener('DOMContentLoaded', setupWatch);
 
 </script>
-</html>

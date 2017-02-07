@@ -1,11 +1,26 @@
 ---
-layout: bare
+layout: page-small
+redirectDelay: 15
 ---
-<head>
-	<title>{{ site.projectName | xml_escape }}</title>
-	<meta http-equiv="Refresh" content="0; url={{ site.projectGithub }}" />
-{% include ga.html %}
-</head>
-<body>
-	<a href="{{ site.projectUrl }}">{{ site.projectGithub | xml_escape }}</a>
-</body>
+
+<p>
+	<strong>The page <code>{{ page.url }}</code> has moved.</strong> <a href="{{ site.projectRedirectBaseUrl }}{{ page.url }}">Redirecting in {{ layout.redirectDelay }} seconds.</a>
+</p>
+
+<script type="text/javascript">
+//<![CDATA[
+	(function() {
+		var delay = {{ layout.redirectDelay }}  * 1000;
+		var url = "{{ site.projectRedirectBaseUrl }}{{ page.url }}";
+
+		setTimeout(
+			function() {
+				try {
+					document.location = url;
+				} catch(error) {}
+			},
+			delay
+		);
+	}());
+//]]>
+</script>

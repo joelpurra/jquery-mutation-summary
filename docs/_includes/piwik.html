@@ -1,0 +1,80 @@
+
+<!-- DO NOT COPY THIS SCRIPT TAG -->
+<!-- It's used for my statistics -->
+<!-- DO NOT COPY THIS SCRIPT TAG -->
+<!-- See also https://joelpurra.com/ -->
+<!-- See also https://tracker.joelpurra.com/ -->
+<!-- See also https://joelpurra.com/projects/masters-thesis/ -->
+<!-- Piwik -->
+<script type="text/javascript">
+//<![CDATA[
+// DO NOT COPY THIS SCRIPT TAG
+// It's used for my statistics
+// DO NOT COPY THIS SCRIPT TAG
+(function() {
+	function isTrackingEnabled() {
+		// This code has been duplicated elsewhere in this project.
+		// https://stackoverflow.com/questions/23933650/javascript-only-detection-of-do-not-track-settings-in-ie11
+		// https://stackoverflow.com/questions/16947459/is-it-possible-to-check-the-value-of-firefox-dnt-with-javascript/16947583#16947583
+		// https://www.w3.org/TR/tracking-dnt/#js-dom
+		// https://www.w3.org/TR/tracking-dnt/#dnt-header-field
+		var dntValue = window.doNotTrack || window.msDoNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || null;
+		var isDNT = dntValue === "yes" || dntValue === "1";
+
+		return !isDNT;
+	}
+
+	(function() {
+		try {
+			// NOTE: optionally insert a <noscript> element with the following id to display a non-tracking notice above it.
+			var noticeElementId = "noscript-tracking-notice";
+			var infoUrl = "https://tracker.joelpurra.com/";
+
+			var noticeStatus = isTrackingEnabled() ? "enabled" : "disabled";
+			var notice = "Active tracking using Piwik on this page has been <em>" + noticeStatus + "</em> based on your browser's Do Not Track (DNT) setting. Read more <a href=\"" + infoUrl +"\">about active tracking</a>.";
+
+			var noticeElement = document.createElement("p");
+			noticeElement.innerHTML = notice;
+
+			var noscriptTrackingNoticeElement = document.getElementById(noticeElementId);
+
+			if (noscriptTrackingNoticeElement) {
+				noscriptTrackingNoticeElement.parentNode.insertBefore(noticeElement, noscriptTrackingNoticeElement);
+			}
+		} catch(e) {
+			// Ignore.
+		}
+	}());
+
+	(function() {
+		if (window.piwikTrack === false || !isTrackingEnabled()) {
+			return;
+		}
+
+		var cookieDomain = "*.joelpurra.io";
+
+		if (/\.?github\.com$/.test(document.domain)) {
+			cookieDomain = "*.github.com";
+		}
+
+		window._paq = window._paq || [];
+		_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+		_paq.push(["setCookieDomain", cookieDomain]);
+		_paq.push(["setDomains", ["*.joelpurra.com", "*.joelpurra.se", "*.joelpurra.de"]]);
+		_paq.push(["setDoNotTrack", true]);
+		_paq.push(['enableLinkTracking']);
+		_paq.push(['enableHeartBeatTimer', 10]);
+		_paq.push(['trackPageView']);
+		(function() {
+			var u="https://tracker.joelpurra.com/";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', '13']);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		})();
+	}());
+}());
+//]]>
+</script>
+<noscript><p><img src="https://tracker.joelpurra.com/piwik.php?idsite=13" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
