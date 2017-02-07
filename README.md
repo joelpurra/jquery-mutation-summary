@@ -1,5 +1,12 @@
 # [jquery-mutation-summary](https://joelpurra.github.io/jquery-mutation-summary) javascript library
 
+<p class="donate">
+  <a href="https://joelpurra.com/donate/proceed/?amount=5&currency=usd"><kbd>Donate $5 now</kbd></a>
+  <a href="https://joelpurra.com/donate/proceed/?amount=25&currency=usd"><kbd>Donate $25 now</kbd></a>
+  <a href="https://joelpurra.com/donate/proceed/?amount=100&currency=usd&invoice=true"><kbd>Donate $100 now</kbd></a>
+  <a href="https://joelpurra.com/donate/"><kbd>More options</kbd></a>
+</p>
+
 A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper. It adds easy, chainable `.mutationSummary()` calls to your jQuery objects.
 
 > [Mutation Summary](https://github.com/rafaelw/mutation-summary) is a JavaScript library that makes observing changes to the DOM fast, easy and safe.
@@ -106,4 +113,4 @@ Should be as compatible as mutation-summary is - see the wiki page on [browser s
 
 
 
-[jquery-mutation-summary](https://joelpurra.github.io/jquery-mutation-summary) copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL.
+[jquery-mutation-summary](https://joelpurra.github.io/jquery-mutation-summary) copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL. [Your donations are appreciated!](https://joelpurra.com/donate/)
