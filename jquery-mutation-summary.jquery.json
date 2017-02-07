@@ -13,12 +13,12 @@
     "author": {
         "name": "Joel Purra",
         "email": "code+jquery@joelpurra.com",
-        "url": "http://joelpurra.com/"
+        "url": "https://joelpurra.com/"
     },
     "maintainers": [{
         "name": "Joel Purra",
         "email": "code+jquery@joelpurra.com",
-        "url": "http://joelpurra.com/"
+        "url": "https://joelpurra.com/"
     }],
     "licenses": [{
         "type": "Multi-licensing",
@@ -33,10 +33,10 @@
         "type": "MIT",
         "url": "https://github.com/joelpurra/jquery-mutation-summary/blob/master/LICENSE-MIT"
     }],
-    "homepage": "http://joelpurra.github.com/jquery-mutation-summary",
-    "docs": "http://joelpurra.github.com/jquery-mutation-summary",
+    "homepage": "https://joelpurra.github.io/jquery-mutation-summary",
+    "docs": "https://joelpurra.github.io/jquery-mutation-summary",
     "bugs": "https://github.com/joelpurra/jquery-mutation-summary/issues",
-    "demo": "http://joelpurra.github.com/jquery-mutation-summary/example/demo.html",
+    "demo": "https://joelpurra.github.io/jquery-mutation-summary/example/demo.html",
     "dependencies": {
         "jquery": ">=1.7.0"
     }

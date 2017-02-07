@@ -1,13 +1,13 @@
 /*!
  * @license jquery-mutation-summary
- * Copyright © 2012, 2013, 2014, Joel Purra <http://joelpurra.com/>
+ * Copyright © 2012, 2013, 2014, Joel Purra <https://joelpurra.com/>
  * Released under MIT, BSD and GPL license. Comply with at least one.
  *
  * A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper.
- * http://joelpurra.github.com/jquery-mutation-summary
+ * https://joelpurra.github.io/jquery-mutation-summary
  *
  * "Mutation Summary is a JavaScript library that makes observing changes to the DOM fast, easy and safe."
- * http://code.google.com/p/mutation-summary/
+ * https://github.com/rafaelw/mutation-summary
  */
 
 /* global
@@ -135,7 +135,7 @@ MutationSummary,
 
         stop: function() {
             // Any changes from the last callback will be passed here
-            // http://code.google.com/p/mutation-summary/wiki/APIReference#Methods
+            // https://github.com/rafaelw/mutation-summary/blob/master/APIReference.md#methods
             var finalSummary = this.observer.disconnect();
 
             if (finalSummary !== undefined) {
