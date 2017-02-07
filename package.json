@@ -9,10 +9,21 @@
   },
   "author": "Joel Purra <code@joelpurra.com> (https://joelpurra.com/)",
   "main": "src/jquery.mutation-summary.js",
-  "scripts": {},
+  "scripts": {
+    "build": "rimraf ./docs/dist && mkdirp ./docs/dist && cp ./src/jquery.mutation-summary.js ./docs/dist/",
+    "git-add-dist": "git add ./docs/dist/jquery.mutation-summary.js"
+  },
+  "pre-commit": [
+    "build",
+    "git-add-dist"
+  ],
   "license": "BSD-2-Clause OR MIT OR GPL-3.0",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.5.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joelpurra/jquery-mutation-summary.git"
