@@ -1,8 +1,12 @@
-*.html text
+* text=auto eol=lf
+
+*.gitattributes text
+.gitignore text
+LICENSE* text
+*.md text
 *.js text
 *.json text
-*.md text
 *.yml text
-.gitignore text
-.gitmodules text
-LICENSE*  text
+
+*.css text diff=css
+*.html text diff=html
