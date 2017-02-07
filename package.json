@@ -1,0 +1,27 @@
+{
+  "name": "jquery-mutation-summary",
+  "title": "jquery-mutation-summary",
+  "version": "0.2.2",
+  "description": "A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper.",
+  "homepage": "https://joelpurra.com/projects/jquery-mutation-summary/",
+  "bugs": {
+    "url": "https://github.com/joelpurra/jquery-mutation-summary/issues"
+  },
+  "author": "Joel Purra <code@joelpurra.com> (https://joelpurra.com/)",
+  "main": "src/jquery.mutation-summary.js",
+  "scripts": {},
+  "license": "BSD-2-Clause OR MIT OR GPL-3.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelpurra/jquery-mutation-summary.git"
+  },
+  "keywords": [
+      "mutation-summary",
+      "mutation-observers",
+      "DOM",
+      "observation",
+      "changes"
+  ]
+}
