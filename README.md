@@ -1,4 +1,4 @@
-# [jquery-mutation-summary](https://joelpurra.com/projects/jquery-mutation-summary) javascript library
+# [jquery-mutation-summary](https://joelpurra.com/projects/jquery-mutation-summary/) javascript library
 
 <p class="donate">
   <a href="https://joelpurra.com/donate/proceed/?amount=5&currency=usd"><kbd>Donate $5 now</kbd></a>
@@ -13,7 +13,7 @@ A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper
 
 The Mutation Summary library aggregates multiple DOM mutations to a neat changeset, optionally [filtered by CSS-style selectors](https://github.com/rafaelw/mutation-summary/blob/master/APIReference.md#The_element_Query). Have a look at [this fun and informative 8 minute screen cast](https://www.youtube.com/watch?v=eRZ4pO0gVWw) by [Rafael Z Weinstein](https://github.com/rafaelweinstein), the creator of mutation-summary.
 
-- [Project page](https://joelpurra.com/projects/)
+- [Project page](https://joelpurra.com/projects/jquery-mutation-summary/)
 - [Source on Github](https://github.com/joelpurra/jquery-mutation-summary)
 
 
@@ -67,7 +67,7 @@ function callback(summaries){
 $observerSummaryRoot.mutationSummary("connect", callback, [{ all: true }]);
 
 // Do something to trigger mutationSummary
-$("<a />", { href: "https://joelpurra.com/projects/jquery-mutation-summary"}).text("Go to the jquery-mutation-summary website").appendTo("body");
+$("<a />", { href: "https://joelpurra.com/projects/jquery-mutation-summary/"}).text("Go to the jquery-mutation-summary website").appendTo("body");
 
 // Disconnect when done listening
 $observerSummaryRoot.mutationSummary("disconnect");
@@ -113,4 +113,4 @@ Should be as compatible as mutation-summary is - see the wiki page on [browser s
 
 
 
-[jquery-mutation-summary](https://joelpurra.com/projects/jquery-mutation-summary) copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL. [Your donations are appreciated!](https://joelpurra.com/donate/)
+[jquery-mutation-summary](https://joelpurra.com/projects/jquery-mutation-summary/) copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, [Joel Purra](https://joelpurra.com/). All rights reserved. When using jquery-mutation-summary, comply to at least one of the three available licenses: BSD, MIT, GPL. [Your donations are appreciated!](https://joelpurra.com/donate/)
