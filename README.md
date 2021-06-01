@@ -7,6 +7,14 @@
   <a href="https://joelpurra.com/donate/"><kbd>More options</kbd></a>
 </p>
 
+
+
+> ## ⚠️ This project has been archived
+>
+> No future updates are planned. Feel free to continue using it, but expect no support.
+
+
+
 A jQuery wrapper/plugin for mutation-summary, the DOM mutation-observers wrapper. It adds easy, chainable `.mutationSummary()` calls to your jQuery objects.
 
 > [Mutation Summary](https://github.com/rafaelw/mutation-summary) is a JavaScript library that makes observing changes to the DOM fast, easy and safe.
